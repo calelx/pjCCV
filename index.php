@@ -36,6 +36,9 @@
                         </ul>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="eventos/nuevoTipoEvento.html"> Nuevo tipo de Evento </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="eventos/agregarEvento.php"> Crear Evento </a>
                     </li>
                     <li class="nav-item dropdown">
