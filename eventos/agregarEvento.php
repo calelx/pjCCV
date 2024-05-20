@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear nuevo contacto</title>
+    <title>Crear nuevo evento</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+        </script>
 </head>
 
 <body>
@@ -36,7 +36,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../eventos/agregarEvento.php"> Crear Evento </a>
+                        <a class="nav-link" href="#"> Crear Evento </a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -44,9 +44,9 @@
                             Contactos
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="contactos/agregarContactos.html">Agregar nuevo
+                            <li><a class="dropdown-item" href="../contactos/agregarContactos.html">Agregar nuevo
                                     contacto</a></li>
-                            <li><a class="dropdown-item" href="contactos/verContactos.php">Ver contactos</a></li>
+                            <li><a class="dropdown-item" href="../contactos/verContactos.php">Ver contactos</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -56,28 +56,36 @@
 
     <div class="container mt-5">
         <div class="w-50 mx-auto p-3 bg-light rounded shadow-lg p-3 mb-5 bg-body rounded">
-            <h1 class="mb-4">Crear nuevo contacto</h1>
-            <form class="row g-3" method="post" action="insertContacto.php">
+            <h1 class="mb-4">Crear nuevo evento</h1>
+            <form class="row g-3" method="post" action="insertEvento.php">
                 <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" placeholder="Nombre" name="nameContac" required>
+                    <label for="inputEmail4" class="form-label">Titulo</label>
+                    <input type="text" class="form-control" placeholder="Titulo" name="nameContac" required>
                 </div>
                 <div class="col-md-6">
-                    <label for="inputPassword4" class="form-label">Fecha de Nacimiento</label>
-                    <input type="date" class="form-control" name="dateContac" required>
+                    <label for="inputPassword4" class="form-label">Fecha de evento</label>
+                    <input type="date" class="form-control" name="date" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Hora del evento</label>
+                    <input type="time" class="form-control" placeholder="hour" name="nameContac" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationCustom04" class="form-label">Tipo de evento</label>
+                    <select class="form-select" id="validationCustom04" name="typeEvent" required>
+                        <option selected disabled value="">Elige...</option>
+
+                        <?php
+                        //<option>...</option>
+                        require_once '../conexion.php';
+                        ?>
+
+                    </select>
                 </div>
                 <div class="col-12">
-                    <label for="inputAddress" class="form-label">Dirección</label>
-                    <input type="text" class="form-control" placeholder="1234 Main St" name="addresContac" required>
-                </div>
-                <div class="col-12">
-                    <label for="inputAddress2" class="form-label">Teléfono</label>
-                    <input type="text" class="form-control" placeholder="1234 5678" name="phoneContac" required>
-                </div>
-                <div class="col-12">
-                    <label for="inputAddress2" class="form-label">Email</label>
-                    <input type="email" class="form-control" placeholder="ejemplos@gmail.com" name="emailContac"
-                        required>
+                    <label for="validationTextarea" class="form-label">Descripción</label>
+                    <textarea class="form-control" id="validationTextarea" placeholder="Texto requerido" name="descrip"
+                        required></textarea>
                 </div>
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary">Crear</button>
