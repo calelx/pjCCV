@@ -1,12 +1,27 @@
 var calendarEl = document.getElementById('calendar')
 var calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'dayGridMonth',
-        headerToolbar: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay'
-        },
-    events: 'getEventos.php'
+    buttonText: {
+        today: "Hoy",
+        month: "Mes",
+        week: "Semana",
+        day: "D\xEDa",
+        list: "Agenda"
+    },
+    headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+    },
+    locale: 'es',
+    events: 'getEventos.php',
+    dayMaxEvents: true,
+    navLinks: true,
+    eventClick: function(info) {
+        var idEvento = info.event.extendedProps.idEvento;
+        var idTipo = info.event.extendedProps.idTipo;
+        window.location.href = 'detalleEvento.php?idEvento=' + idEvento + '&idTipo=' + idTipo
+    }
 });
 
 calendar.render();

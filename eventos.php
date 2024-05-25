@@ -20,11 +20,12 @@ class Eventos {
         $eventos = array();
 
         while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {    
-            $fecha = $row['fecha']->format('Y-m-d'); // Formato 'YYYY-MM-DD'
-            $hora = $row['hora']->format('H:i:s');   // Formato 'HH:MM:SS'
+            $fecha = $row['fecha']->format('Y-m-d');
+            $hora = $row['hora']->format('H:i:s');
             $fecha_hora = $fecha . 'T' . $hora;
             $evento = array(
-                'id' => $row['idEvento'],
+                'idEvento' => $row['idEvento'],
+                'idTipo' => $row['idTipo'],
                 'title' => trim($row['titulo']),
                 'start' => $fecha_hora,
                 'rrule' => array(
