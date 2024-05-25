@@ -59,15 +59,15 @@
             <h1 class="mb-4">Crear nuevo evento</h1>
             <form class="row g-3" method="post" action="insertEvento.php">
                 <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label">Titulo</label>
+                    <label class="form-label">Titulo</label>
                     <input type="text" class="form-control" placeholder="Titulo" name="title" required>
                 </div>
                 <div class="col-md-6">
-                    <label for="inputPassword4" class="form-label">Fecha de evento</label>
+                    <labe class="form-label">Fecha de evento</labe>
                     <input type="date" class="form-control" name="date" required>
                 </div>
                 <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label">Hora del evento</label>
+                    <label class="form-label">Hora del evento</label>
                     <input type="time" class="form-control" placeholder="hour" name="hour" required>
                 </div>
                 <div class="col-md-6">
@@ -96,8 +96,8 @@
                     </select>
                 </div>
                 <div class="col-12">
-                    <label for="validationTextarea" class="form-label">Descripción</label>
-                    <textarea class="form-control" id="validationTextarea" placeholder="Texto requerido" name="descrip"
+                    <label class="form-label">Descripción</label>
+                    <textarea class="form-control" placeholder="Texto requerido" name="descrip"
                         required></textarea>
                 </div>
                 <div class="col-12">
