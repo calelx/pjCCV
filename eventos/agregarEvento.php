@@ -74,6 +74,8 @@
                     <label for="validationCustom04" class="form-label">Tipo de evento</label>
                     <select class="form-select" id="validationCustom04" name="typeEvent" required>
                         <option selected disabled value="">Elige...</option>
+                        <option selected disabled value="">Cumple</option>
+                        <option selected disabled value="">Dia de la madre</option>
 
                         <?php
                         require_once '../conexion.php';
