@@ -81,5 +81,6 @@
         .btn-small {
             font-size: 1.2rem; /* Tamaño de fuente más pequeño para los botones */
         }
+        
     </style>
 </html>
