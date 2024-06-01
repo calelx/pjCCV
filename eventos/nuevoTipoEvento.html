@@ -82,6 +82,19 @@
         </div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+
+            if (status === 'success') {
+                alert('Evento creado exitosamente.');
+            } else if (status === 'error') {
+                alert('Error al crear el evento.');
+            }
+        });
+    </script>
+
 </body>
 
 </html>
