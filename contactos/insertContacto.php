@@ -15,7 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['emailContac'];
 
     // Consulta para obtener el próximo idEvento disponible
-    $numEventoQuery = "SELECT MIN(t1.idEvento) + 1 AS next_id FROM eventos t1 LEFT JOIN eventos t2 ON t1.idEvento + 1 = t2.idEvento WHERE t2.idEvento IS NULL";
+    $numEventoQuery = "SELECT COALESCE(MIN(t1.idEvento) + 1, 1) AS next_id FROM eventos t1 LEFT JOIN eventos t2 ON t1.idEvento + 1 = t2.idEvento WHERE t2.idEvento IS NULL;
+    ";
     $idEventoResult = sqlsrv_query($conexion, $numEventoQuery);
 
     if ($idEventoResult === false) {

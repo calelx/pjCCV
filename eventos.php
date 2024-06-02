@@ -1,8 +1,10 @@
 <?php
 require_once 'conexion.php';
 
-class Eventos {
-    public function obtenerEventos() {
+class Eventos
+{
+    public function obtenerEventos()
+    {
         $conexion = Cconexion::ConexionBD();
 
         if ($conexion === false) {
@@ -19,21 +21,34 @@ class Eventos {
 
         $eventos = array();
 
-        while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {    
-            $fecha = $row['fecha']->format('Y-m-d');
-            $hora = $row['hora']->format('H:i:s');
-            $fecha_hora = $fecha . 'T' . $hora;
-            $evento = array(
-                'idEvento' => $row['idEvento'],
-                'idTipo' => $row['idTipo'],
-                'title' => trim($row['titulo']),
-                'start' => $fecha_hora,
-                'rrule' => array(
-                    'freq' => trim($row['frecuencia']), 
-                    'interval' => 1,
-                    'dtstart' => $fecha_hora
-                )
-            );
+        while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+            if (trim($row['frecuencia']) === 'noFreq') {
+                $fecha = $row['fecha']->format('Y-m-d');
+                $hora = $row['hora']->format('H:i:s');
+                $fecha_hora = $fecha . 'T' . $hora;
+                $evento = array(
+                    'idEvento' => $row['idEvento'],
+                    'idTipo' => $row['idTipo'],
+                    'title' => trim($row['titulo']),
+                    'start' => $fecha_hora,
+                );
+            } else {
+                $fecha = $row['fecha']->format('Y-m-d');
+                $hora = $row['hora']->format('H:i:s');
+                $fecha_hora = $fecha . 'T' . $hora;
+                $evento = array(
+                    'idEvento' => $row['idEvento'],
+                    'idTipo' => $row['idTipo'],
+                    'title' => trim($row['titulo']),
+                    'start' => $fecha_hora,
+                    'rrule' => array(
+                        'freq' => trim($row['frecuencia']),
+                        'interval' => 1,
+                        'dtstart' => $fecha_hora
+                    )
+                );
+            }
+
             $eventos[] = $evento;
         }
 
