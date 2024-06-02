@@ -2,7 +2,7 @@
 class Cconexion {
     public static function ConexionBD() {
         $serverName = "localhost";
-        $connectionInfo = array("Database"=>"pjCCV", "UID"=>"acalel", "PWD"=>"acalel");
+        $connectionInfo = array("Database"=>"pjCCV", "UID"=>"pjCCV", "PWD"=>"pjCCV");
         $conexion = sqlsrv_connect($serverName, $connectionInfo);
 
         if($conexion) {
