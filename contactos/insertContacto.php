@@ -45,20 +45,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Ejecutar la consulta para insertar en contactos
     $resultContactos = sqlsrv_query($conexion, $valuesContactos, $paramsContactos);
-    if ($resultContactos === false) {
-        die('Error al insertar en contactos: ' . print_r(sqlsrv_errors(), true));
-    }
 
     // Ejecutar la consulta para insertar en eventos
     $resultEventos = sqlsrv_query($conexion, $valuesEventos, $paramsEventos);
-    if ($resultEventos === false) {
-        die('Error al insertar en eventos: ' . print_r(sqlsrv_errors(), true));
-    }
 
     // Ejecutar la consulta para insertar en cumple
     $resultCumple = sqlsrv_query($conexion, $valuesCumple, $paramsCumple);
-    if ($resultCumple === false) {
-        die('Error al insertar en cumple: ' . print_r(sqlsrv_errors(), true));
+    if ($resultCumple === false || $resultEventos === false || $resultContactos === false) {
+        header("Location: agregarContactos.html?status=error");
+        exit();
     }
 
     // Liberar los resultados de las consultas
@@ -67,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     sqlsrv_free_stmt($resultCumple);
     sqlsrv_close($conexion);
 
-    header("Location: agregarContactos.html");
+    header("Location: agregarContactos.html?status=success");
     exit();
 }
 ?>
