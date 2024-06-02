@@ -4,7 +4,7 @@ echo $email;
 
 // Detalles de la conexión a la base de datos
 $serverName = "localhost";
-$connectionInfo = array("Database" => "pjCCV", "UID" => "acalel", "PWD" => "acalel");
+$connectionInfo = array("Database" => "pjCCV", "UID" => "pjCCV", "PWD" => "pjCCV");
 $conexion = sqlsrv_connect($serverName, $connectionInfo);
 
 // Verificar si la conexión se estableció correctamente

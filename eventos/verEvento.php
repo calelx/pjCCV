@@ -9,7 +9,7 @@
     <?php
     $id = $_GET['id'];
 
-    echo "el id que se seleccionno es " . $id;
+    echo "el id que se seleccionno es "  .$id;
     
     
     ?>
