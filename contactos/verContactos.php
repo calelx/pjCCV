@@ -29,7 +29,8 @@
                 <tbody>
                     <?php
                     $serverName = "localhost";
-                    $connectionInfo = array("Database" => "pjCCV", "UID" => "acalel", "PWD" => "acalel");
+                    $connectionInfo = array("Database" => "pjCCV", "UID" => "pjCCV", "PWD" => "pjCCV");
+                    //$connectionInfo = array("Database"=>"pjCCV", "UID"=>"acalel", "PWD"=>"acalel");
                     $conexion = sqlsrv_connect($serverName, $connectionInfo);
 
                     if ($conexion) {

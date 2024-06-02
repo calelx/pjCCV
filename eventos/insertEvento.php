@@ -13,7 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tipo = $_POST['typeEvent'];
     $descrip = $_POST['descrip'];
 
-    $querryIdEvent = "SELECT MIN(t1.idEvento) + 1 AS next_id FROM eventos t1 LEFT JOIN eventos t2 ON t1.idEvento + 1 = t2.idEvento WHERE t2.idEvento IS NULL";
+    $querryIdEvent = "SELECT COALESCE(MIN(t1.idEvento) + 1, 1) AS next_id FROM eventos t1 LEFT JOIN eventos t2 ON t1.idEvento + 1 = t2.idEvento WHERE t2.idEvento IS NULL;
+    ";
+    
     $querry = "insert into eventos (idEvento, idTipo, fecha, hora, titulo, descripcion) values (?,?,?,?,?,?)";
 
     $idEventoResult = sqlsrv_query($conexion, $querryIdEvent);
