@@ -28,11 +28,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die('Error al insertar en eventos: ' . print_r(sqlsrv_errors(), true));
     }
 
-
+    if ($result === false) {
+        header("Location: agregarEvento.php?status=error");
+        sqlsrv_close($conexion);
+        exit();
+    }
 
     sqlsrv_free_stmt($idEventoResult);
     sqlsrv_close($conexion);
-    header("Location: agregarEvento.php");
+    header("Location: agregarEvento.php?status=success");
     exit();
 }
 ?>
