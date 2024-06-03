@@ -50,8 +50,8 @@
                                 <td><?= htmlspecialchars($datos->Email) ?></td>
                                 <td>
                                   
-                                    <a href="#" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
-                                    <a href="#" class="btn btn-small bg-warning"><i class="fa-solid fa-pen"></i></a>                                    
+                                <a href="eliminar_contacto.php?Email=<?= htmlspecialchars($datos->Email) ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                <a href="modificar-contacto.php?Email=<?= htmlspecialchars($datos->Email) ?>" class="btn btn-small bg-warning"><i class="fa-solid fa-pen"></i></a>                                   
                                 </td>
                             </tr>
                         <?php }
