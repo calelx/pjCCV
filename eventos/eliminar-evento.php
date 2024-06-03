@@ -33,7 +33,7 @@ if (!empty($_GET["idEvento"])) {
     sqlsrv_close($conexion);
 
     header("Location: http://localhost/pjCCV");
-    diedie("eliminado correctamene: ");
+    diedie("eliminado correctamene:  ");
     exit();
 } else {
     echo "ID del evento no proporcionado.";
