@@ -36,6 +36,6 @@ if (!empty($_GET["idEvento"])) {
     diedie("eliminado correctamene: ");
     exit();
 } else {
-    echo "ID del evento no proporcionado.";
+    echo "ID  del evento no proporcionado.";
 }
 ?>
