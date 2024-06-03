@@ -41,6 +41,9 @@
                             <li><a class="dropdown-item" href="../contactos/verContactos.php">Ver contactos</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../info.html">Cómo usar?</a>
+                    </li>
                 </ul>
             </div>
         </div>

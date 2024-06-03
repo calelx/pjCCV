@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo usar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            line-height: 1.6;
+        }
+
+        .navbar-nav .nav-link {
+            margin-right: 1rem;
+        }
+
+        .container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        h2 {
+            margin-top: 2rem;
+        }
+
+        h3 {
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Calendario</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="eventos/nuevoTipoEvento.html">Nuevo tipo de Evento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="eventos/agregarEvento.php">Crear Evento</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Contactos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="contactos/agregarContactos.html">Agregar nuevo contacto</a></li>
+                            <li><a class="dropdown-item" href="contactos/verContactos.php">Ver contactos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="info.html">Cómo usar?</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="mt-3 mb-4">
+        <div class="container">
+            <a href="#introduccion" class="me-3">Introducción</a>
+            <a href="#Calendario" class="me-3">Calendario</a>
+            <a href="#NuevoTipoEvento" class="me-3">Nuevo tipo de evento</a>
+            <a href="#CrearEvento" class="me-3">Crear Evento</a>
+            <a href="#Contacto" class="me-3">Contacto</a>
+            <a href="#Codigo" class="me-3">Base de datos</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <section id="introduccion">
+            <h2>Introducción</h2>
+            <h3>Bienvenido a Calendario</h3>
+            <p>En este apartado podrás encontrar más información sobre la página y su funcionamiento en cada módulo.</p>
+        </section>
+
+        <section id="Calendario">
+            <h2>Calendario</h2>
+            <h3>Cómo ver los eventos</h3>
+            <p>En la página principal podrás ver un calendario con todos los eventos registrados hasta la fecha. En la parte superior hay varios botones para cambiar de mes y ver los diferentes eventos registrados.</p>
+            <img src="./img/paginaInicial.png" alt="calendario">
+            <h4>Diferentes vistas</h4>
+            <p>En la parte superior derecha del calendario puedes encontrar varios botones:</p>
+            <ul>
+                <li>Mes: Vista de todos los eventos de un mes completo.</li>
+                <img src="./img/calendario.png" alt="Vista de mes">
+                <li>Semana: Vista detallada de los eventos con la hora específica.</li>
+                <img src="./img/semana.png" alt="Vista de semana">
+                <li>Día: Vista de los eventos de un día con sus horas.</li>
+                <img src="./img/dia.png" alt="Vista de día">
+                <li>Agenda: Vista en forma de lista de los eventos de un mes, mostrando el día y la hora.</li>
+                <img src="./img/agenda.png" alt="Vista de agenda">
+            </ul>
+            <p>Para más información sobre un evento, haz clic en cualquier vista y selecciona el evento deseado.</p>
+        </section>
+
+        <section id="NuevoTipoEvento">
+            <h2>Crear un nuevo tipo de evento</h2>
+            <img src="./img/tipoEvento.png" alt="Crear tipo de evento">
+            <p>En esta sección puedes crear un nuevo tipo de evento con dos parámetros: el nombre del tipo de evento (e.g., Cumpleaños, Tarea, Pago) y la frecuencia con la que se repetirá:</p>
+            <ul>
+                <li>No repetir: El evento solo aparecerá una vez en la fecha asignada.</li>
+                <li>Semana: El evento se repetirá semanalmente en el mismo día.</li>
+                <li>Mes: El evento se repetirá mensualmente en el mismo día.</li>
+                <li>Año: El evento se repetirá anualmente en la misma fecha.</li>
+            </ul>
+            <img src="./img/repetir.png" alt="Frecuencia de repetición">
+        </section>
+
+        <section id="CrearEvento">
+            <h2>Crear un nuevo evento</h2>
+            <img src="./img/crearEvento.png" alt="Crear evento">
+            <p>En esta sección puedes crear un evento en el calendario especificando el nombre del evento, la fecha, la hora, el tipo de evento y una descripción breve.</p>
+            <p>Para seleccionar la fecha y hora, haz clic en los íconos correspondientes para abrir un menú de selección.</p>
+            <img src="./img/fecha.png" alt="Seleccionar fecha">
+            <img src="./img/hora.png" alt="Seleccionar hora">
+        </section>
+
+        <section id="Contacto">
+            <h2>Crear un nuevo contacto</h2>
+            <p>En esta sección puedes registrar amigos y familiares, permitiéndote añadir su cumpleaños, número telefónico, nombre, dirección y email. Nota: Si el email ya existe en otro contacto, no se registrará el nuevo contacto.</p>
+            <img src="./img/contactoNuevo.png" alt="Crear contacto">
+        </section>
+
+    </div>
+</body>
+
+</html>
